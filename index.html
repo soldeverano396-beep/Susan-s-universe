@@ -20,7 +20,9 @@
     --crema: #F5F0E9;
 }
 
-/* FONDO CON HERO */
+/* ==========================================================
+   ✨ FONDO HERO SUAVE + ANTI-PIXELACIÓN + TEXTURA EDITORIAL
+   ========================================================== */
 body {
     margin: 0;
     font-family: "Cormorant Garamond", serif;
@@ -34,24 +36,50 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+
+    /* evita pixelación */
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: smooth;
 }
 
-/* FILTRO EDITORIAL */
+/* capa cálida + textura + blur suave */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(243, 233, 201, 0.50); /* velo cálido */
-    backdrop-filter: blur(1.4px);
 
+    /* velo cálido */
+    background: rgba(243, 233, 201, 0.48);
+
+    /* suavizado editorial */
+    backdrop-filter: blur(2.2px) brightness(1.05);
+
+    /* textura */
     background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-    background-size: 400px;
-    mix-blend-mode: multiply;
-    opacity: 0.4;
+    background-size: 450px;
+    mix-blend-mode: soft-light;
+    opacity: 0.45;
+
     pointer-events: none;
 }
 
-/* CONTENEDOR CENTRAL */
+/* viñeta suave estilo editorial */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background: radial-gradient(
+        circle at center,
+        rgba(255,255,255,0) 32%,
+        rgba(0,0,0,0.16) 100%
+    );
+}
+
+/* ==========================================================
+   CONTENEDOR
+   ========================================================== */
 .container {
     max-width: 650px;
     width: 100%;
@@ -78,35 +106,37 @@ h1 {
     line-height: 1.5;
 }
 
-/* CARD ELEGANTE SIN ONDAS */
+/* ==========================================================
+   CARD — EDITORIAL SIMPLE
+   ========================================================== */
 .card-simple {
-    background: rgba(58, 34, 24, 0.90); /* café oscuro con transparencia */
-    padding: 50px 36px;
+    background: rgba(58, 34, 24, 0.90);
+    padding: 50px 35px;
     border-radius: 16px;
     box-shadow: 0 12px 26px rgba(0,0,0,0.30);
-    border: 1px solid rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.12);
     color: var(--crema);
     backdrop-filter: blur(3px);
 }
 
-/* TÍTULOS DE SECCIÓN */
+/* TITULOS DE SECCIÓN */
 .section-title {
     font-size: 26px;
     text-transform: uppercase;
     margin-bottom: 22px;
     font-weight: 600;
     letter-spacing: 1px;
-    color: var(--crema);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     gap: 10px;
+    color: var(--crema);
 }
 
 /* ICONOS */
 .icon {
-    color: var(--mostaza);
     font-size: 20px;
+    color: var(--mostaza);
 }
 
 /* LINKS */
@@ -160,17 +190,17 @@ footer {
         <!-- DESTACADOS -->
         <h2 class="section-title"><span class="icon">𓆸</span> Destacados</h2>
 
-        <a class="link" href="#">
+        <a class="link" href="https://susanstore.github.io/mi-tienda-camisetas/">
             <span class="icon">✿</span> Colección de camisetas
         </a><br>
 
-        <a class="link" href="#">
+        <a class="link" href="https://soldeverano396-beep.github.io/fotografia-sol-de-verano/">
             <span class="icon">✦</span> Fotografía – Sol de Verano
         </a>
 
         <br><br>
 
-        <!-- REDES -->
+        <!-- REDES Y MÚSICA -->
         <h2 class="section-title"><span class="icon">𓆸</span> Redes & Música</h2>
 
         <a class="link" href="https://www.instagram.com/susan.z.c">
@@ -189,7 +219,7 @@ footer {
             <span class="icon">✧</span> Facebook
         </a><br>
 
-        <a class="link" href="#">
+        <a class="link" href="https://www.youtube.com/@DadsRoom7">
             <span class="icon">✤</span> YouTube
         </a>
 
