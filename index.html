@@ -5,237 +5,171 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susan’s Universe</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Cormorant+Garamond:wght@300;400;600&family=Courier+Prime:wght@400&display=swap" rel="stylesheet">
+<!-- Fuente manuscrita original -->
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
 <style>
-
-/* PALETA */
-:root {
-    --fondo-amarillo: #F3E9C9;
-    --cafe-oscuro: #3A2218;
-    --cafe: #4B2B1F;
-    --mostaza: #B18145;
-    --durazno: #DB8F5D;
-    --azul: #001E60;
-    --crema: #F5F0E9;
+/* ------------------ RESET ------------------ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* ==========================================================
-   ✨ FONDO HERO SUAVE + ANTI-PIXELACIÓN + TEXTURA EDITORIAL
-   ========================================================== */
-body {
-    margin: 0;
-    font-family: "Cormorant Garamond", serif;
-    color: var(--cafe);
-    padding: 20px 15px;
-    display: flex;
-    justify-content: center;
-
-    background-image: url("img/hero.jpg");
+/* ------------------ FONDO ------------------ */
+body{
+    background: url("img/hero.jpg") no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
 
-    /* evita pixelación */
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: smooth;
+    font-family: "Courier New", monospace;
+    color:#f7efe6;
+    text-align:center;
+    padding:20px;
+
+    line-height:1.6;
+    text-shadow:0 2px 6px rgba(0,0,0,0.6);
 }
 
-/* capa cálida + textura + blur suave */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    /* velo cálido */
-    background: rgba(243, 233, 201, 0.48);
-
-    /* suavizado editorial */
-    backdrop-filter: blur(2.2px) brightness(1.05);
-
-    /* textura */
-    background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
-    background-size: 450px;
-    mix-blend-mode: soft-light;
-    opacity: 0.45;
-
-    pointer-events: none;
+/* ------------------ TÍTULO ------------------ */
+h1{
+    font-family:'Homemade Apple', cursive;
+    font-size:60px;
+    margin-top:40px;
+    margin-bottom:18px;
+    color:#f6ede4;
+    text-shadow:0 3px 8px rgba(0,0,0,0.75);
 }
 
-/* viñeta suave estilo editorial */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-
-    background: radial-gradient(
-        circle at center,
-        rgba(255,255,255,0) 32%,
-        rgba(0,0,0,0.16) 100%
-    );
+/* Ajuste móvil */
+@media(max-width:600px){
+    h1{
+        font-size:42px;
+        line-height:1.1;
+        margin-top:15px;
+        word-spacing:0;
+    }
 }
 
-/* ==========================================================
-   CONTENEDOR
-   ========================================================== */
-.container {
-    max-width: 650px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    z-index: 2;
+/* ------------------ SUBTÍTULO ------------------ */
+.subtext{
+    font-size:18px;
+    max-width:650px;
+    margin:0 auto 40px auto;
+    color:#f4ebdd;
+    text-shadow:0 2px 5px rgba(0,0,0,0.7);
 }
 
-/* TÍTULO */
-h1 {
-    font-family: "Homemade Apple", cursive;
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: var(--cafe-oscuro);
+/* ------------------ CARD ------------------ */
+.card{
+    background:rgba(45,25,15,0.55);
+    backdrop-filter:blur(3px);
+    padding:50px 25px;
+    width:90%;
+    max-width:820px;
+    margin:10px auto 55px auto;
+    border-radius:15px;
+    color:#f9ecdf;
+    box-shadow:0 0 18px rgba(0,0,0,0.35);
+
+    text-shadow:0 2px 4px rgba(0,0,0,0.6);
 }
 
-/* TAGLINE */
-.tagline {
-    font-family: "Courier Prime", monospace;
-    font-size: 16px;
-    color: var(--cafe-oscuro);
-    opacity: 0.9;
-    margin-bottom: 40px;
-    line-height: 1.5;
+/* ------------------ ENCABEZADOS ------------------ */
+h2{
+    font-family:"Courier New", monospace;
+    margin:25px 0 18px 0;
+    font-size:28px;
+    color:#f8eadd;
+    letter-spacing:1px;
 }
 
-/* ==========================================================
-   CARD — EDITORIAL SIMPLE
-   ========================================================== */
-.card-simple {
-    background: rgba(58, 34, 24, 0.90);
-    padding: 50px 35px;
-    border-radius: 16px;
-    box-shadow: 0 12px 26px rgba(0,0,0,0.30);
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--crema);
-    backdrop-filter: blur(3px);
+/* ------------------ LISTAS ------------------ */
+ul{
+    list-style:none;
+    margin:12px 0 28px 0;
 }
 
-/* TITULOS DE SECCIÓN */
-.section-title {
-    font-size: 26px;
-    text-transform: uppercase;
-    margin-bottom: 22px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color: var(--crema);
+li{
+    margin:10px 0;
+    font-size:18px;
 }
 
-/* ICONOS */
-.icon {
-    font-size: 20px;
-    color: var(--mostaza);
+/* ------------------ ICONOS ANTIGUOS ------------------ */
+.icon{
+    margin-right:8px;
+    font-size:19px;
+    color:#ddb56d;
+    text-shadow:0 2px 6px rgba(0,0,0,0.75);
 }
 
-/* LINKS */
-.link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    font-family: "Courier Prime", monospace;
-    color: var(--crema);
-    border-bottom: 1px solid rgba(255,255,255,0.18);
-    padding: 6px 0;
-    transition: 0.25s ease;
+/* iconos variados */
+.flower { color:#e4c28a; }
+.star   { color:#e6b98b; }
+.bloom  { color:#d9a76a; }
+.orn    { color:#e6d3a3; }
+
+/* ------------------ LINKS ------------------ */
+a{
+    color:#d8caff;
+    text-decoration:none;
 }
 
-.link:hover {
-    color: var(--durazno);
-    border-color: var(--durazno);
-    transform: translateX(6px);
+a:hover{
+    color:#ffe2b3;
+    text-shadow:0 0 6px rgba(0,0,0,0.5);
 }
 
-.link .icon {
-    color: var(--mostaza);
+/* ------------------ FOOTER ------------------ */
+.footer{
+    margin-top:35px;
+    font-size:16px;
 }
-
-/* FOOTER */
-footer {
-    margin-top: 32px;
-    font-family: "Courier Prime";
-    font-size: 14px;
-    opacity: 0.8;
-    color: var(--cafe);
-}
-
 </style>
+
 </head>
-
-
 <body>
-<div class="container">
 
-    <h1>Susan’s Universe</h1>
+<h1>Susan’s Universe</h1>
 
-    <p class="tagline">
-        Un pequeño rincón cálido donde guardo mis proyectos, mi arte,<br>
-        mis canciones y todo lo que me inspira.
-    </p>
+<p class="subtext">
+    Un pequeño rincón cálido donde guardo mis proyectos,  
+    mi arte, mis canciones y todo lo que me inspira.
+</p>
 
-    <div class="card-simple">
+<div class="card">
 
-        <!-- DESTACADOS -->
-        <h2 class="section-title"><span class="icon">𓆸</span> Destacados</h2>
+    <h2>𓆸 Destacados</h2>
+    <ul>
+        <li><span class="icon flower">✿</span><a href="#">Colección de camisetas</a></li>
+        <li><span class="icon star">✦</span><a href="#">Fotografía – Sol de Verano</a></li>
+    </ul>
 
-        <a class="link" href="https://susanstore.github.io/mi-tienda-camisetas/">
-            <span class="icon">✿</span> Colección de camisetas
-        </a><br>
+    <h2>𓆸 Redes & Música</h2>
+    <ul>
+        <li><span class="icon bloom">❁</span>
+            <a href="https://www.instagram.com/susan.z.c" target="_blank">Instagram</a>
+        </li>
 
-        <a class="link" href="https://soldeverano396-beep.github.io/fotografia-sol-de-verano/">
-            <span class="icon">✦</span> Fotografía – Sol de Verano
-        </a>
+        <li><span class="icon orn">✧</span>
+            <a href="https://open.spotify.com/playlist/3fzefURGfMNMVJKz95yojy?si=e333654fe7464ebe" target="_blank">Playlist – Spotify</a>
+        </li>
 
-        <br><br>
+        <li><span class="icon flower">ꕤ</span>
+            <a href="https://www.tiktok.com/@susann.z.c?_r=1&_t=ZS-91oPsfo8ztC" target="_blank">TikTok</a>
+        </li>
 
-        <!-- REDES Y MÚSICA -->
-        <h2 class="section-title"><span class="icon">𓆸</span> Redes & Música</h2>
+        <li><span class="icon star">⟡</span><a href="#">Facebook</a></li>
+        <li><span class="icon bloom">❋</span><a href="#">YouTube</a></li>
+    </ul>
 
-        <a class="link" href="https://www.instagram.com/susan.z.c">
-            <span class="icon">✿</span> Instagram
-        </a><br>
-
-        <a class="link" href="https://open.spotify.com/playlist/3fzefURGfMNMVJKz95yojy?si=e333654fe7464ebe">
-            <span class="icon">✦</span> Playlist – Spotify
-        </a><br>
-
-        <a class="link" href="https://www.tiktok.com/@susann.z.c?_r=1&_t=ZS-91oPsfo8ztC">
-            <span class="icon">❀</span> TikTok
-        </a><br>
-
-        <a class="link" href="#">
-            <span class="icon">✧</span> Facebook
-        </a><br>
-
-        <a class="link" href="https://www.youtube.com/@DadsRoom7">
-            <span class="icon">✤</span> YouTube
-        </a>
-
-        <br><br>
-
-        <!-- PROYECTOS -->
-        <h2 class="section-title"><span class="icon">𓆸</span> Proyectos</h2>
-
-        <a class="link" href="#">
-            <span class="icon">✧</span> Newsletter (pronto)
-        </a>
-
-    </div>
-
-    <footer>© 2025 · Susan Zambrano</footer>
+    <h2>𓆸 Proyectos</h2>
+    <ul>
+        <li><span class="icon orn">✦</span><a href="#">Newsletter (pronto)</a></li>
+    </ul>
 
 </div>
+
+<p class="footer">© 2025 · Susan Zambrano</p>
+
 </body>
 </html>
