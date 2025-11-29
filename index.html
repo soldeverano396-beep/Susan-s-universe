@@ -14,32 +14,33 @@
         --durazno: #DB8F5D;
         --durazno-claro: #F4D4C4;
         --azul: #001E60;
-        --negro: #000;
 
-        /* Fondos con opacidad más alta (más elegante) */
-        --panel-opacidad: rgba(250,245,241,0.70); 
-        --card-opacidad: rgba(244,212,196,0.65);
+        --text-light: #F8F5F0;
+        --text-mid: #EDE7DF;
+
+        /* Fondos */
+        --panel-cafe: rgba(58,42,34,0.78);
+        --card-opacidad: rgba(244,212,196,0.52);
         --fondo-cafe: #2D1E18;
     }
 
-    /* ======== BODY – MOBILE FIRST ======== */
+    /* ===== BODY ===== */
     body {
         margin: 0;
         padding: 0;
 
         background:
-            radial-gradient(circle at 50% 30%, rgba(219,143,93,0.30), transparent 70%),
-            radial-gradient(circle at 35% 80%, rgba(0,30,96,0.25), transparent 75%),
+            radial-gradient(circle at 50% 30%, rgba(219,143,93,0.32), transparent 70%),
+            radial-gradient(circle at 35% 80%, rgba(0,30,96,0.20), transparent 75%),
             linear-gradient(180deg, var(--fondo-cafe), #1B120F);
 
         font-family: "Cormorant Garamond", serif;
-        color: var(--negro);
+        color: var(--text-light);
 
         display: flex;
         justify-content: center;
-
         min-height: 100vh;
-        padding: 40px 20px;
+        padding: 18px 20px;
     }
 
     body::before {
@@ -51,75 +52,76 @@
         pointer-events: none;
     }
 
-    /* ======== PANEL CENTRAL — más opacidad ======== */
+    /* ===== PANEL CENTRAL ===== */
     .container {
         width: 92%;
         max-width: 420px;
 
-        background: var(--panel-opacidad); /* ← MENOS OPACO, MÁS ELEGANTE */
-        padding: 35px 26px 50px;
+        background: var(--panel-cafe);
+        padding: 28px 22px 40px;
         border-radius: 18px;
 
-        border: 1px solid rgba(0,0,0,0.09);
+        /* → toque azul tenue en el borde */
+        border: 1px solid rgba(0,30,96,0.08);
 
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
 
-        box-shadow: 0 15px 35px rgba(0,0,0,0.40);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.40);
     }
 
-    /* ICONO */
+    /* ICONO SUPERIOR */
     .icon-top {
         text-align: center;
-        font-size: 34px;
-        color: var(--azul);
+        font-size: 30px;
+        color: var(--azul); /* ← AZUL */
         opacity: 0.85;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
     }
 
     /* TÍTULO */
     h1 {
         font-family: "Homemade Apple", cursive;
-        font-size: 38px;
+        font-size: 34px;
         text-align: center;
-        color: var(--azul);
-        opacity: 0.85;
-        margin-bottom: 12px;
+        color: var(--text-light);
+        opacity: 0.92;
+        margin-bottom: 8px;
     }
 
     /* SUBTÍTULO */
     .tagline {
         text-align: center;
-        font-size: 15px;
-        opacity: 0.65; 
-        margin-bottom: 32px;
+        font-size: 14px;
+        opacity: 0.78;
+        color: var(--text-mid);
+        margin-bottom: 22px;
         font-family: "Courier Prime", monospace;
-        line-height: 1.4;
+        line-height: 1.35;
     }
 
-    /* ======== CARDS — MÁS OPACIDAD AÚN ======== */
+    /* ===== CARDS ===== */
     .section {
-        padding: 18px 20px;
-        margin-bottom: 26px;
+        padding: 16px 18px;
+        margin-bottom: 22px;
 
-        background: var(--card-opacidad); /* ← AHORA MÁS TRANSLÚCIDO */
+        background: var(--card-opacidad);
         border-radius: 12px;
 
-        border: 1px solid rgba(177,129,69,0.25);
+        /* → borde azul muy suave */
+        border: 1px solid rgba(0,30,96,0.15);
 
-        backdrop-filter: blur(3px);
-        -webkit-backdrop-filter: blur(3px);
-
-        opacity: 0.90; /* ← TODO el card más etéreo */
+        backdrop-filter: blur(4px);
+        opacity: 0.92;
     }
 
     .section h2 {
-        font-size: 15px;
+        font-size: 14px;
         text-transform: uppercase;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         letter-spacing: 1px;
-        color: var(--azul);
-        opacity: 0.85;
+        color: var(--azul); /* ← AZUL EDITORIAL */
+        opacity: 0.95;
     }
 
     /* LINKS */
@@ -130,35 +132,37 @@
 
         font-family: "Courier Prime", monospace;
         font-size: 14px;
-        color: var(--negro);
+        color: var(--text-light);
+        opacity: 0.85;
 
         text-decoration: none;
-        margin: 10px 0;
+        margin: 8px 0;
         padding-bottom: 4px;
 
-        border-bottom: 1px solid rgba(0,0,0,0.20);
+        border-bottom: 1px solid rgba(255,255,255,0.20);
 
-        opacity: 0.80; /* ← sutil, editorial */
         transition: 0.25s;
     }
 
     .link .icon {
         font-size: 20px;
         color: var(--miel);
-        opacity: 0.95;
+        opacity: 1;
     }
 
     .link:hover {
         transform: translateX(4px);
         opacity: 1;
-        color: var(--azul);
+        color: var(--azul); /* ← hover azul */
+        border-bottom-color: var(--azul);
     }
 
     footer {
-        margin-top: 22px;
+        margin-top: 16px;
         text-align: center;
         font-size: 12px;
-        opacity: 0.50;
+        opacity: 0.55;
+        color: var(--text-light);
         font-family: "Courier Prime", monospace;
     }
 
