@@ -5,11 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Susan’s Universe</title>
 
+<!-- Tipografía manuscrita -->
 <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
+/* ------------------ RESET ------------------ */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+/* ------------------ FONDO ------------------ */
 body{
     background:url("img/hero.jpg") no-repeat center center fixed;
     background-size:cover;
@@ -21,6 +28,7 @@ body{
     line-height:1.6;
 }
 
+/* ------------------ TÍTULO ------------------ */
 h1{
     font-family:'Homemade Apple', cursive;
     font-size:60px;
@@ -30,22 +38,42 @@ h1{
     text-shadow:0 3px 8px rgba(0,0,0,0.75);
 }
 
+/* Ajuste móvil */
 @media(max-width:600px){
     h1{
         font-size:42px;
         line-height:1.1;
         margin-top:15px;
+        margin-bottom:10px;
     }
 }
 
+/* ------------------ SUBTÍTULO (con glow) ------------------ */
 .subtext{
-    font-size:18px;
+    position: relative;
+    font-size:19px;
     max-width:650px;
     margin:0 auto 40px auto;
     color:#f4ebdd;
     text-shadow:0 2px 5px rgba(0,0,0,0.7);
+    z-index:2;
 }
 
+.subtext::before{
+    content:"";
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    width:92%;
+    height:150%;
+    background:rgba(0,0,0,0.35);
+    filter:blur(20px);
+    border-radius:25px;
+    z-index:-1;
+}
+
+/* ------------------ CARD ------------------ */
 .card{
     background:rgba(45,25,15,0.55);
     backdrop-filter:blur(3px);
@@ -55,16 +83,29 @@ h1{
     margin:10px auto 55px auto;
     border-radius:15px;
     box-shadow:0 0 18px rgba(0,0,0,0.35);
+    color:#f9ecdf;
+    text-shadow:0 2px 4px rgba(0,0,0,0.6);
 }
 
+/* ------------------ ENCABEZADOS ------------------ */
 h2{
     font-size:28px;
     margin:25px 0 18px 0;
+    color:#f8eadd;
 }
 
-ul{list-style:none;margin:12px 0 28px 0;}
-li{margin:10px 0;font-size:18px;}
+/* ------------------ LISTAS ------------------ */
+ul{
+    list-style:none;
+    margin:12px 0 28px 0;
+}
 
+li{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/* ------------------ ICONOS ANTIGUOS ------------------ */
 .icon{
     margin-right:8px;
     font-size:19px;
@@ -72,20 +113,23 @@ li{margin:10px 0;font-size:18px;}
     text-shadow:0 2px 6px rgba(0,0,0,0.75);
 }
 
-.flower{color:#e4c28a;}
-.star{color:#e6b98b;}
-.bloom{color:#d9a76a;}
-.orn{color:#e6d3a3;}
+.flower { color:#e4c28a; }
+.star   { color:#e6b98b; }
+.bloom  { color:#d9a76a; }
+.orn    { color:#e6d3a3; }
 
+/* ------------------ LINKS ------------------ */
 a{
     color:#d8caff;
     text-decoration:none;
 }
+
 a:hover{
     color:#ffe2b3;
     text-shadow:0 0 6px rgba(0,0,0,0.5);
 }
 
+/* ------------------ FOOTER ------------------ */
 .footer{
     margin-top:35px;
     font-size:16px;
@@ -101,50 +145,61 @@ a:hover{
     Un rincón cálido donde guardo mi arte, mis proyectos y todo lo que me inspira.
 </p>
 
+<!-- ------------------ CONTENEDOR PRINCIPAL ------------------ -->
 <div class="card">
 
+    <!-- Destacados -->
     <h2>𓆸 Destacados</h2>
     <ul>
-        <li><span class="icon flower">✿</span>
+        <li>
+            <span class="icon flower">✿</span>
             <a href="https://susanstore.github.io/mi-tienda-camisetas/" target="_blank">
                 Colección de camisetas
             </a>
         </li>
 
-        <li><span class="icon star">✦</span>
+        <li>
+            <span class="icon star">✦</span>
             <a href="https://soldeverano396-beep.github.io/fotografia-sol-de-verano/" target="_blank">
                 Fotografía – Sol de Verano
             </a>
         </li>
     </ul>
 
+    <!-- Redes & Música -->
     <h2>𓆸 Redes & Música</h2>
     <ul>
-        <li><span class="icon bloom">❁</span>
+        <li>
+            <span class="icon bloom">❁</span>
             <a href="https://www.instagram.com/susan.z.c" target="_blank">Instagram</a>
         </li>
 
-        <li><span class="icon orn">✧</span>
+        <li>
+            <span class="icon orn">✧</span>
             <a href="https://open.spotify.com/playlist/3fzefURGfMNMVJKz95yojy?si=e333654fe7464ebe" target="_blank">
                 Playlist – Spotify
             </a>
         </li>
 
-        <li><span class="icon flower">ꕤ</span>
+        <li>
+            <span class="icon flower">ꕤ</span>
             <a href="https://www.tiktok.com/@susann.z.c?_r=1&_t=ZS-91oPsfo8ztC" target="_blank">
                 TikTok
             </a>
         </li>
 
-        <li><span class="icon star">⟡</span>
+        <li>
+            <span class="icon star">⟡</span>
             <a href="#" target="_blank">Facebook</a>
         </li>
 
-        <li><span class="icon bloom">❋</span>
+        <li>
+            <span class="icon bloom">❋</span>
             <a href="https://www.youtube.com/@DadsRoom7" target="_blank">YouTube</a>
         </li>
     </ul>
 
+    <!-- Proyectos -->
     <h2>𓆸 Proyectos</h2>
     <ul>
         <li>
