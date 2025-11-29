@@ -9,18 +9,16 @@
 
 <style>
     :root {
-        /* PALETA */
-        --miel: #B18145;
-        --durazno: #DB8F5D;
-        --durazno-claro: #F4D4C4;
+        /* Paleta */
+        --durazno: #DB8F5D;        /* texto + líneas */
+        --mostaza-real: #E3A85C;  /* iconos */
+        --azul-card: #0A1A3D;     /* azul profundo editorial */
         --azul: #001E60;
 
-        --text-light: #F8F5F0;
+        --text-light: #F8F5F0;    /* hover blanco */
         --text-mid: #EDE7DF;
 
-        /* Fondos */
-        --panel-cafe: rgba(58,42,34,0.78);
-        --card-opacidad: rgba(244,212,196,0.52);
+        --panel-cafe: rgba(44,32,27,0.78);
         --fondo-cafe: #2D1E18;
     }
 
@@ -31,7 +29,7 @@
 
         background:
             radial-gradient(circle at 50% 30%, rgba(219,143,93,0.32), transparent 70%),
-            radial-gradient(circle at 35% 80%, rgba(0,30,96,0.20), transparent 75%),
+            radial-gradient(circle at 35% 80%, rgba(0,30,96,0.25), transparent 75%),
             linear-gradient(180deg, var(--fondo-cafe), #1B120F);
 
         font-family: "Cormorant Garamond", serif;
@@ -58,28 +56,22 @@
         max-width: 420px;
 
         background: var(--panel-cafe);
-        padding: 28px 22px 40px;
+        padding: 26px 22px 40px;
         border-radius: 18px;
 
-        /* → toque azul tenue en el borde */
-        border: 1px solid rgba(0,30,96,0.08);
+        border: 1px solid rgba(255,255,255,0.12);
 
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
-
+        backdrop-filter: blur(6px);
         box-shadow: 0 12px 28px rgba(0,0,0,0.40);
     }
 
-    /* ICONO SUPERIOR */
     .icon-top {
         text-align: center;
-        font-size: 30px;
-        color: var(--azul); /* ← AZUL */
-        opacity: 0.85;
+        font-size: 32px;
+        color: var(--mostaza-real);
         margin-bottom: 6px;
     }
 
-    /* TÍTULO */
     h1 {
         font-family: "Homemade Apple", cursive;
         font-size: 34px;
@@ -89,7 +81,6 @@
         margin-bottom: 8px;
     }
 
-    /* SUBTÍTULO */
     .tagline {
         text-align: center;
         font-size: 14px;
@@ -100,19 +91,17 @@
         line-height: 1.35;
     }
 
-    /* ===== CARDS ===== */
+    /* ===== TARJETAS AZULES ===== */
     .section {
-        padding: 16px 18px;
+        padding: 18px 20px;
         margin-bottom: 22px;
 
-        background: var(--card-opacidad);
-        border-radius: 12px;
+        background: var(--azul-card);
+        border-radius: 6px; /* menos redondeado */
+        border: 1px solid rgba(255,255,255,0.06); /* no mostaza */
 
-        /* → borde azul muy suave */
-        border: 1px solid rgba(0,30,96,0.15);
-
-        backdrop-filter: blur(4px);
-        opacity: 0.92;
+        backdrop-filter: blur(3px);
+        opacity: 0.96;
     }
 
     .section h2 {
@@ -120,41 +109,46 @@
         text-transform: uppercase;
         margin-bottom: 12px;
         letter-spacing: 1px;
-        color: var(--azul); /* ← AZUL EDITORIAL */
+        color: var(--text-light);
         opacity: 0.95;
     }
 
-    /* LINKS */
+    /* ===== LINKS ESTILO REFERENCIA ===== */
     .link {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 12px;
 
         font-family: "Courier Prime", monospace;
-        font-size: 14px;
-        color: var(--text-light);
-        opacity: 0.85;
+        font-size: 16px;
 
+        color: var(--durazno) !important;             /* texto durazno */
         text-decoration: none;
-        margin: 8px 0;
-        padding-bottom: 4px;
 
-        border-bottom: 1px solid rgba(255,255,255,0.20);
+        border-bottom: 1.3px solid var(--durazno);    /* línea durazno */
+        padding-bottom: 6px;
 
-        transition: 0.25s;
+        opacity: 1;
+        transition: 0.28s ease;
     }
 
+    /* ICONOS MOSTAZA REAL */
     .link .icon {
         font-size: 20px;
-        color: var(--miel);
-        opacity: 1;
+        color: var(--mostaza-real) !important;
+        filter: drop-shadow(0 0 4px rgba(227,168,92,0.45));
     }
 
+    /* HOVER → BLANCO EDITORIAL */
     .link:hover {
         transform: translateX(4px);
-        opacity: 1;
-        color: var(--azul); /* ← hover azul */
-        border-bottom-color: var(--azul);
+        color: var(--text-light) !important;
+        border-bottom-color: var(--text-light);
+    }
+
+    .link:hover .icon {
+        color: var(--text-light) !important;
+        filter: drop-shadow(0 0 6px rgba(255,255,255,0.55));
     }
 
     footer {
